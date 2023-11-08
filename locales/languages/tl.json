@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Magpadala",
     "buy_button": "Bumili",
+    "tuli_button": "Tuli",
     "receive_button": "Tumanggap",
     "portfolio_button": "Portfolio",
     "add_collectible_button": "Magdagdag",
@@ -904,6 +905,7 @@
     "buy_description": "Bumili ng crypto gamit ang cash",
     "swap_description": "Palitan sa pagitan ng mga token",
     "send_description": "Magpadala ng crypto sa anumang account",
+    "tuli_description": "Tuli test description",
     "receive_description": "Tumanggap ng crypto",
     "chart_time_period": {
       "1d": "Ngayong araw",

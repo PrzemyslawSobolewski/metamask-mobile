@@ -45,6 +45,7 @@ import SwapsQuotesView from '../../UI/Swaps/QuotesView';
 import CollectiblesDetails from '../../UI/CollectibleModal';
 import OptinMetrics from '../../UI/OptinMetrics';
 import Drawer from '../../UI/Drawer';
+import GenerateCodeView from '../../Views/TuliFlowView/GenereteCodeView';
 import { FiatOnRampSDKProvider } from '../../UI/Ramp/sdk';
 import GetStarted from '../../UI/Ramp/Views/GetStarted';
 import PaymentMethods from '../../UI/Ramp/Views/PaymentMethods/PaymentMethods';
@@ -577,6 +578,21 @@ const Swaps = () => (
   </Stack.Navigator>
 );
 
+const TuliFlowView = () => (
+  <Stack.Navigator>
+    <Stack.Screen
+      name="GenerateCode"
+      component={GenerateCodeView}
+      options={SendTo.navigationOptions}
+    />
+    <Stack.Screen
+      name="TransactionConfirmation"
+      component={SwapsQuotesView}
+      options={SwapsQuotesView.navigationOptions}
+    />
+  </Stack.Navigator>
+);
+
 const SetPasswordFlow = () => (
   <Stack.Navigator>
     <Stack.Screen
@@ -642,6 +658,7 @@ const MainNavigator = () => (
     <Stack.Screen name="Asset" component={AssetModalFlow} />
     <Stack.Screen name="Webview" component={Webview} />
     <Stack.Screen name="SendView" component={SendView} />
+    <Stack.Screen name="TuliFlowView" component={TuliFlowView} />
     <Stack.Screen
       name="SendFlowView"
       component={SendFlowView}

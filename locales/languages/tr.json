@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Gönder",
     "buy_button": "Satın Al",
+    "tuli_button": "Tuli",
     "receive_button": "Al",
     "portfolio_button": "Portföy",
     "add_collectible_button": "Ekle",
@@ -904,6 +905,7 @@
     "buy_description": "Nakit ile kripto satın alın",
     "swap_description": "Tokenler arasında swap gerçekleştirin",
     "send_description": "Dilediğin hesaba kripto gönderin",
+    "tuli_description": "Tuli test description",
     "receive_description": "Kripto alın",
     "chart_time_period": {
       "1d": "Bugün",

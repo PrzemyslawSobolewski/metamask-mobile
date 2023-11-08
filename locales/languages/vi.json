@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Gửi",
     "buy_button": "Mua",
+    "tuli_button": "Tuli",
     "receive_button": "Nhận",
     "portfolio_button": "Danh mục đầu tư",
     "add_collectible_button": "Thêm",
@@ -904,6 +905,7 @@
     "buy_description": "Mua tiền mã hóa bằng tiền",
     "swap_description": "Chuyển đổi giữa các token",
     "send_description": "Gửi tiền mã hóa đến bất kỳ tài khoản nào",
+    "tuli_description": "Tuli test description",
     "receive_description": "Nhận tiền mã hóa",
     "chart_time_period": {
       "1d": "Hôm nay",

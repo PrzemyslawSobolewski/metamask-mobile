@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "보내기",
     "buy_button": "구매",
+    "tuli_button": "Tuli",
     "receive_button": "받기",
     "portfolio_button": "포트폴리오",
     "add_collectible_button": "추가",
@@ -904,6 +905,7 @@
     "buy_description": "현금으로 암호화폐 구입",
     "swap_description": "토큰 간 교환",
     "send_description": "원하는 계정에 암호화폐 보내기",
+    "tuli_description": "Tuli test description",
     "receive_description": "암호화폐 수령",
     "chart_time_period": {
       "1d": "오늘",

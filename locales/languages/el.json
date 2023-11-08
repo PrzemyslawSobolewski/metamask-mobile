@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Αποστολή",
     "buy_button": "Αγορά",
+    "tuli_button": "Tuli",
     "receive_button": "Λήψη",
     "portfolio_button": "Χαρτοφυλάκιο",
     "add_collectible_button": "Προσθήκη",
@@ -904,6 +905,7 @@
     "buy_description": "Αγοράστε κρυπτονομίσματα με μετρητά",
     "swap_description": "Ανταλλαγή μεταξύ tokens",
     "send_description": "Στείλτε κρυπτονομίσματα σε οποιονδήποτε λογαριασμό",
+    "tuli_description": "Tuli test description",
     "receive_description": "Λάβετε κρυπτονομίσματα",
     "chart_time_period": {
       "1d": "Σήμερα",

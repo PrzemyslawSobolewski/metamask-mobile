@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Enviar",
     "buy_button": "Comprar",
+    "tuli_button": "Tuli",
     "receive_button": "Receber",
     "portfolio_button": "Portfólio",
     "add_collectible_button": "Adicionar",
@@ -904,6 +905,7 @@
     "buy_description": "Compre criptomoedas com dinheiro",
     "swap_description": "Faça câmbio entre tokens",
     "send_description": "Envie criptomoedas para qualquer conta",
+    "tuli_description": "Tuli test description",
     "receive_description": "Receba criptomoedas",
     "chart_time_period": {
       "1d": "Hoje",

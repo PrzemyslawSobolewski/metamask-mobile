@@ -556,6 +556,7 @@
   "asset_overview": {
     "send_button": "Отправить",
     "buy_button": "Купить",
+    "tuli_button": "Tuli",
     "receive_button": "Получить",
     "add_collectible_button": "Добавить",
     "info": "Инфо",

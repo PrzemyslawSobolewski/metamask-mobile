@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "Отправить",
     "buy_button": "Купить",
+    "tuli_button": "Tuli",
     "receive_button": "Получить",
     "portfolio_button": "Portfolio",
     "add_collectible_button": "Добавить",
@@ -904,6 +905,7 @@
     "buy_description": "Покупайте криптовалюту за наличные",
     "swap_description": "Обменивайте одни токены на другие",
     "send_description": "Отправляйте криптовалюту на любой счет",
+    "tuli_description": "Tuli test description",
     "receive_description": "Получить криптовалюту",
     "chart_time_period": {
       "1d": "Сегодня",

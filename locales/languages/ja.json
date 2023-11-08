@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "送信",
     "buy_button": "購入",
+    "tuli_button": "Tuli",
     "receive_button": "受取",
     "portfolio_button": "Portfolio",
     "add_collectible_button": "追加",
@@ -904,6 +905,7 @@
     "buy_description": "現金で仮想通貨を購入します",
     "swap_description": "トークン同士を交換します",
     "send_description": "仮想通貨を任意のアカウントに送金します",
+    "tuli_description": "Tuli test description",
     "receive_description": "仮想通貨を受け取ります",
     "chart_time_period": {
       "1d": "今日",

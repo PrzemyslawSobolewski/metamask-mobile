@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "भेजें",
     "buy_button": "खरीदें",
+    "tuli_button": "Tuli",
     "receive_button": "प्राप्त करें",
     "portfolio_button": "पोर्टफोलियो",
     "add_collectible_button": "जोड़ें",
@@ -904,6 +905,7 @@
     "buy_description": "नकद के साथ क्रिप्टो खरीदें",
     "swap_description": "टोकन के बीच विनिमय",
     "send_description": "किसी भी खाते में क्रिप्टो भेजें",
+    "tuli_description": "Tuli test description",
     "receive_description": "क्रिप्टो प्राप्त करें",
     "chart_time_period": {
       "1d": "आज",

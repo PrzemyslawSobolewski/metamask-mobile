@@ -36,6 +36,7 @@ import {
   WALLET_RECEIVE,
   WALLET_SEND,
   WALLET_SWAP,
+  WALLET_TULI,
 } from './WalletActions.constants';
 import useOnRampNetwork from '../../UI/Ramp/hooks/useOnRampNetwork';
 
@@ -50,6 +51,21 @@ const WalletActions = () => {
   const dispatch = useDispatch();
 
   const [isNetworkBuySupported] = useOnRampNetwork();
+
+  const onTuliClick = () => {
+    sheetRef.current?.hide(() => {
+      navigate('TuliFlowView', {
+        screen: 'GenerateCode',
+      });
+
+      /*Analytics.trackEventWithParameters(MetaMetricsEvents.BUY_BUTTON_CLICKED, {
+        text: 'Buy',
+        tokenSymbol: '',
+        location: 'TabBar',
+        chain_id: chainId,
+      });*/
+    });
+  };
 
   const onReceive = () => {
     sheetRef.current?.hide(() => dispatch(toggleReceiveModal()));
@@ -115,6 +131,15 @@ const WalletActions = () => {
   return (
     <SheetBottom ref={sheetRef}>
       <View style={styles.actionsContainer}>
+        <WalletAction
+          actionTitle={strings('asset_overview.tuli_button')}
+          actionDescription={strings('asset_overview.tuli_description')}
+          iconName={IconName.Add}
+          iconSize={AvatarSize.Md}
+          onPress={onTuliClick}
+          iconStyle={styles.icon}
+          {...generateTestId(Platform, WALLET_TULI)}
+        />
         {isNetworkBuySupported && (
           <WalletAction
             actionTitle={strings('asset_overview.buy_button')}

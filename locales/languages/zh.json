@@ -888,6 +888,7 @@
   "asset_overview": {
     "send_button": "发送",
     "buy_button": "购买",
+    "tuli_button": "Tuli",
     "receive_button": "接收",
     "portfolio_button": "投资组合",
     "add_collectible_button": "添加",
@@ -904,6 +905,7 @@
     "buy_description": "用现金购买加密货币",
     "swap_description": "代币之间的兑换",
     "send_description": "向任何账户发送加密货币",
+    "tuli_description": "Tuli test description",
     "receive_description": "接收加密货币",
     "chart_time_period": {
       "1d": "今天",
