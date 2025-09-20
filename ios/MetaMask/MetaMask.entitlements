@@ -4,6 +4,10 @@
 <dict>
 	<key>aps-environment</key>
 	<string>development</string>
+	<key>com.apple.developer.applesignin</key>
+	<array>
+		<string>Default</string>
+	</array>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
 		<string>applinks:metamask.io</string>
@@ -14,8 +18,10 @@
 	</array>
 	<key>com.apple.developer.in-app-payments</key>
 	<array>
-		<string>merchant.eu.blocklabs</string>
-		<string>merchant.eu.blocklabs-test</string>
+		<string>merchant.io.metamask.banxa</string>
+		<string>merchant.io.metamask.wyre</string>
+		<string>merchant.io.metamask.wyre.test</string>
+		<string>merchant.io.metamask.banxa.test</string>
 	</array>
 </dict>
 </plist>
