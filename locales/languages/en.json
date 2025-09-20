@@ -1654,7 +1654,7 @@
     "nfts_autodetection_cta": "Turn on NFT detection in Settings",
     "learn_more": "Learn more",
     "add_collectibles": "Import NFTs",
-    "no_transactions": "You have no transactions!",
+    "no_transactions": "You have no transactions!!!!!",
     "switch_network_to_view_transactions": "Please switch network to view transactions",
     "send_button": "Send",
     "deposit_button": "Deposit",
@@ -2547,6 +2547,8 @@
     "sell_description": "Sell crypto for cash"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Send",
     "buy_button": "Buy",
     "token_marketplace": "Token marketplace",
@@ -5906,5 +5908,10 @@
       "swap": "Swap tokens",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

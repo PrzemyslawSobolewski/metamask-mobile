@@ -45,6 +45,10 @@ const WalletAction = ({
       title: strings('fund_actionmenu.deposit'),
       description: strings('fund_actionmenu.deposit_description'),
     },
+    [WalletActionType.Tuli]: {
+      title: strings('asset_overview.tuli_button'),
+      description: strings('asset_overview.tuli_description'),
+    },
     [WalletActionType.Swap]: {
       title: strings('asset_overview.swap'),
       description: strings('asset_overview.swap_description'),

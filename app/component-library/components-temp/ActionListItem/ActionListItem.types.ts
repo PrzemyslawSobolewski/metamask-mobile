@@ -4,10 +4,11 @@ import { PressableProps } from 'react-native';
 
 // External dependencies
 import {
-  IconName,
+  IconName as LibIconName,
   TextProps,
   IconProps,
 } from '@metamask/design-system-react-native';
+import { IconName } from '../../components/Icons/Icon';
 
 /**
  * ActionListItem component props.
@@ -33,7 +34,7 @@ export interface ActionListItemProps extends Omit<PressableProps, 'disabled'> {
    * Optional icon name from the design system icon library.
    * If provided, renders an icon with Md size and alternative color.
    */
-  iconName?: IconName;
+  iconName?: IconName | LibIconName;
   /**
    * Optional props to spread to the label Text component when label is a string.
    */

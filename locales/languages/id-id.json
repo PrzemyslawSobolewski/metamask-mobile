@@ -554,6 +554,8 @@
     "change_password": "Ubah kata sandi"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Kirim",
     "buy_button": "Beli",
     "receive_button": "Terima",
@@ -1576,5 +1578,10 @@
     "title": "ID ID CC",
     "language": "id-id",
     "uri": "https://github.com/MetaMask/metamask-mobile/blob/main/app/videos/subtitles/secretPhrase/subtitles-id-id.vtt?raw=true"
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

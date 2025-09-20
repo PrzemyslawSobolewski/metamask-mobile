@@ -123,6 +123,8 @@ const ProtectWalletMandatoryModal = () => {
     });
   };
 
+  return null;
+
   return (
     <Modal
       isVisible={showProtectWalletModal}

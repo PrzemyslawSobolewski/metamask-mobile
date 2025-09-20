@@ -8,7 +8,8 @@ import {
   BoxAlignItems,
   BoxFlexDirection,
   BoxJustifyContent,
-  Icon,
+  Icon as LibIcon,
+  IconName as LibIconName,
   IconSize,
   Text,
   TextColor,
@@ -19,6 +20,7 @@ import { useTailwind } from '@metamask/design-system-twrnc-preset';
 
 // Internal dependencies
 import { ActionListItemProps } from './ActionListItem.types';
+import Icon, { IconName } from '../../components/Icons/Icon';
 
 const ActionListItem: React.FC<ActionListItemProps> = ({
   label,
@@ -82,7 +84,11 @@ const ActionListItem: React.FC<ActionListItemProps> = ({
           justifyContent={BoxJustifyContent.Center}
           twClassName="h-6"
         >
-          <Icon name={iconName} size={IconSize.Md} {...iconProps} />
+          {Object.values(LibIconName).includes(iconName as LibIconName) ? (
+            <LibIcon name={iconName as LibIconName} size={IconSize.Md} {...iconProps} />
+          ) : (
+            <Icon name={iconName as IconName} size={IconSize.Md} {...iconProps} />
+          )}
         </Box>
       );
     }

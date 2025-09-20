@@ -6,7 +6,13 @@ import { createDeepEqualSelector } from './util';
 import { Hex } from '@metamask/utils';
 
 const selectPreferencesControllerState = (state: RootState) =>
-  state.engine?.backgroundState?.PreferencesController;
+  state.engine?.backgroundState?.PreferencesController;4
+
+export const selectSelectedAddress = createSelector(
+  selectPreferencesControllerState,
+  (preferencesControllerState: PreferencesState) =>
+    preferencesControllerState.selectedAddress,
+);
 
 export const selectIpfsGateway = createSelector(
   selectPreferencesControllerState,

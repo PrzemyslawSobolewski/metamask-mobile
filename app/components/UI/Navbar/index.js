@@ -2355,3 +2355,48 @@ export function getDeFiProtocolPositionDetailsNavbarOptions(navigation) {
     ),
   };
 }
+
+/**
+ * Function that returns the navigation options
+ * This is used by views in Tuli flow
+ *
+ * @param {string} title - Title in string format
+ * @returns {Object} - Corresponding navbar options containing title and headerTitleStyle
+ */
+export function getTuliFlowTitle(title, navigation, themeColors, onCancel) {
+  const innerStyles = StyleSheet.create({
+    headerButtonText: {
+      color: themeColors.primary.default,
+      fontSize: 14,
+      ...fontStyles.normal,
+    },
+    headerStyle: {
+      backgroundColor: themeColors.background.default,
+      shadowColor: importedColors.transparent,
+      elevation: 0,
+    },
+  });
+
+  const titleToRender = title;
+
+  return {
+    headerTitle: () => <NavbarTitle title={titleToRender} disableNetwork />,
+    headerRight: () => (
+      // eslint-disable-next-line react/jsx-no-bind
+      <TouchableOpacity
+        onPress={() => {
+          navigation.dangerouslyGetParent()?.pop();
+          onCancel?.();
+        }}
+        style={styles.closeButton}
+        {...generateTestId(Platform, 'tuli-cancel-button')}
+      >
+        <Text style={innerStyles.headerButtonText}>
+          {strings('transaction.cancel')}
+        </Text>
+      </TouchableOpacity>
+    ),
+    headerLeft: () => <View />,
+    headerStyle: innerStyles.headerStyle,
+  };
+}

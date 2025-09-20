@@ -18,6 +18,7 @@ import { isTest } from '../../../util/test/utils';
 import { SnapsExecutionWebView } from '../../../lib/snaps';
 ///: END:ONLY_INCLUDE_IF
 import { ReducedMotionConfig, ReduceMotion } from 'react-native-reanimated';
+import TuliFlowContextProvider from '../TuliFlowView/TuliFlowView.context';
 
 /**
  * Top level of the component hierarchy
@@ -73,10 +74,12 @@ const Root = ({ foxCode }: RootProps) => {
             <NavigationProvider>
               <ControllersGate>
                 <ToastContextWrapper>
-                  <ErrorBoundary view="Root">
-                    <ReducedMotionConfig mode={ReduceMotion.Never} />
-                    <App />
-                  </ErrorBoundary>
+                  <TuliFlowContextProvider>
+                    <ErrorBoundary view="Root">
+                      <ReducedMotionConfig mode={ReduceMotion.Never} />
+                      <App />
+                    </ErrorBoundary>
+                  </TuliFlowContextProvider>
                 </ToastContextWrapper>
               </ControllersGate>
             </NavigationProvider>

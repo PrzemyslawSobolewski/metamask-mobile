@@ -276,6 +276,7 @@ import widgetsSVG from './assets/widgets.svg';
 import wifioffSVG from './assets/wifi-off.svg';
 import wifiSVG from './assets/wifi.svg';
 import xSVG from './assets/x.svg';
+import tuliSVG from './assets/tuli.svg';
 
 /**
  * Asset stored by icon name
@@ -553,4 +554,5 @@ export const assetByIconName: AssetByIconName = {
   [IconName.WifiOff]: wifioffSVG,
   [IconName.Wifi]: wifiSVG,
   [IconName.X]: xSVG,
+  [IconName.Tuli]: tuliSVG,
 };

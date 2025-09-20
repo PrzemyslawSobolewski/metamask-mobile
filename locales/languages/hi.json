@@ -2529,6 +2529,8 @@
     "sell_description": "कैश के लिए क्रिप्टो बेचें"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "भेजें",
     "buy_button": "खरीदें",
     "token_marketplace": "टोकन मार्केटप्लेस",
@@ -5841,5 +5843,10 @@
       "swap": "टोकन स्वैप करें",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

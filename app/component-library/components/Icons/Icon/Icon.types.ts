@@ -346,4 +346,5 @@ export enum IconName {
   WifiOff = 'WifiOff',
   Wifi = 'Wifi',
   X = 'X',
+  Tuli = 'Tuli',
 }

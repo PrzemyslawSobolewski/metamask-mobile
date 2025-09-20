@@ -3,6 +3,12 @@ import AppConstants from '../core/AppConstants';
 const InfuraKey = process.env.MM_INFURA_PROJECT_ID;
 const infuraProjectId = InfuraKey === 'null' ? '' : InfuraKey;
 
+// Tuli
+export const TULI_BASE_URL =
+  'https://backend.develop.tuli.internal.blocklabs.eu';
+export const TULI_WS_BASE_URL =
+  'wss://backend.develop.tuli.internal.blocklabs.eu';
+
 // Support
 export const SRP_GUIDE_URL =
   'https://support.metamask.io/getting-started/user-guide-secret-recovery-phrase-password-and-private-keys/';

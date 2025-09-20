@@ -17,7 +17,7 @@ import Overlay from '../../../component-library/components/Overlay';
 import { useParams } from '../../../util/navigation/navUtils';
 import { Box } from '../../UI/Box/Box';
 
-import { IconName } from '@metamask/design-system-react-native';
+import { IconName as LibIconName } from '@metamask/design-system-react-native';
 import { useTailwind } from '@metamask/design-system-twrnc-preset';
 import {
   useSafeAreaFrame,
@@ -53,6 +53,7 @@ import { MetaMetricsEvents, useMetrics } from '../../hooks/useMetrics';
 
 import BottomShape from './components/BottomShape';
 import OverlayWithHole from './components/OverlayWithHole';
+import { IconName } from '../../../component-library/components/Icons/Icon';
 
 const bottomMaskHeight = 35;
 const animationDuration = AnimationDuration.Fast;
@@ -114,10 +115,21 @@ function TradeWalletActions() {
     sourcePage: 'MainView',
   });
 
+  
+
   const handleNavigateBack = useCallback(() => {
     onDismiss?.();
     setIsVisible(false);
   }, [onDismiss]);
+
+  const onTuliClick =  useCallback(async () => {
+    postCallback.current = () => {
+      navigate('TuliFlowView', {
+        screen: 'GenerateCode',
+      });
+    };
+    handleNavigateBack();
+  }, [handleNavigateBack, navigate]);
 
   const goToSwaps = useCallback(() => {
     postCallback.current = () => {
@@ -251,11 +263,19 @@ function TradeWalletActions() {
                   `px-0`,
                 )}
               >
+                <ActionListItem
+                    label={strings('asset_overview.tuli_button')}
+                    description={strings('asset_overview.tuli_description')}
+                    iconName={IconName.Tuli}
+                    onPress={onTuliClick}
+                    // eslint-disable-next-line react-native/no-inline-styles
+                    testID={WalletActionsBottomSheetSelectorsIDs.WALLET_TULI}
+                  />
                 {AppConstants.SWAPS.ACTIVE && isSwapsAllowed(chainId) && (
                   <ActionListItem
                     label={strings('asset_overview.swap')}
                     description={strings('asset_overview.swap_description')}
-                    iconName={IconName.SwapVertical}
+                    iconName={LibIconName.SwapVertical}
                     onPress={goToSwaps}
                     testID={WalletActionsBottomSheetSelectorsIDs.SWAP_BUTTON}
                     isDisabled={!canSignTransactions || !swapsIsLive}
@@ -265,7 +285,7 @@ function TradeWalletActions() {
                   <ActionListItem
                     label={strings('asset_overview.perps_button')}
                     description={strings('asset_overview.perps_description')}
-                    iconName={IconName.Candlestick}
+                    iconName={LibIconName.Candlestick}
                     onPress={onPerps}
                     testID={WalletActionsBottomSheetSelectorsIDs.PERPS_BUTTON}
                     isDisabled={!canSignTransactions}
@@ -275,7 +295,7 @@ function TradeWalletActions() {
                   <ActionListItem
                     label={strings('asset_overview.earn_button')}
                     description={strings('asset_overview.earn_description')}
-                    iconName={IconName.Stake}
+                    iconName={LibIconName.Stake}
                     onPress={onEarn}
                     testID={WalletActionsBottomSheetSelectorsIDs.EARN_BUTTON}
                     isDisabled={!canSignTransactions}

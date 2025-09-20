@@ -2529,6 +2529,8 @@
     "sell_description": "Magbenta ng crypto kapalit ng cash"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Ipadala",
     "buy_button": "Bumili",
     "token_marketplace": "Token marketplace",
@@ -5841,5 +5843,10 @@
       "swap": "Ipagpalit ang mga token",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

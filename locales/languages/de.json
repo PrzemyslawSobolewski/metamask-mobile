@@ -2529,6 +2529,8 @@
     "sell_description": "Krypto für Bargeld verkaufen"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Senden",
     "buy_button": "Kaufen",
     "token_marketplace": "Token-Marktplatz",
@@ -5841,5 +5843,10 @@
       "swap": "Tokens tauschen",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

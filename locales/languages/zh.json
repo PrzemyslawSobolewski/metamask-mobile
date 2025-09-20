@@ -2529,6 +2529,8 @@
     "sell_description": "卖出加密货币换取现金"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "发送",
     "buy_button": "买入",
     "token_marketplace": "代币市场",
@@ -5841,5 +5843,10 @@
       "swap": "兑换代币",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

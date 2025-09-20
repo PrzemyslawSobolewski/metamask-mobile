@@ -154,6 +154,7 @@ import { SmartAccountModal } from '../../Views/MultichainAccounts/AccountDetails
 import TradeWalletActions from '../../Views/TradeWalletActions';
 import { BIP44AccountPermissionWrapper } from '../../Views/MultichainAccounts/MultichainPermissionsSummary/BIP44AccountPermissionWrapper';
 import { useEmptyNavHeaderForConfirmations } from '../../Views/confirmations/hooks/ui/useEmptyNavHeaderForConfirmations';
+import { useTuliFLowContext } from '../../../components/Views/TuliFlowView/TuliFlowView.context';
 
 const clearStackNavigatorOptions = {
   headerShown: false,
@@ -1027,6 +1028,16 @@ const App: React.FC = () => {
   const isSeedlessOnboardingLoginFlow = useSelector(
     selectSeedlessOnboardingLoginFlow,
   );
+  const { transaction } = useTuliFLowContext();
+
+  useEffect(() => {
+    console.log(transaction);
+    if (transaction && navigation) {
+      navigation.navigate('TuliFlowView', {
+        screen: 'TransactionFinalization',
+      });
+    }
+  }, [transaction, navigation]);
 
   if (isFirstRender.current) {
     trace({

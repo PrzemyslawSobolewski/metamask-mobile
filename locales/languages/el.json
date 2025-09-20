@@ -2529,6 +2529,8 @@
     "sell_description": "Πώληση κρυπτονομισμάτων για μετρητά"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Αποστολή",
     "buy_button": "Αγορά",
     "token_marketplace": "Χώρος αγοράς των tokens",
@@ -5841,5 +5843,10 @@
       "swap": "Ανταλλαγή tokens",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

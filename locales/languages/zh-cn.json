@@ -537,6 +537,8 @@
     "change_password": "更改密码"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "发送",
     "receive_button": "接收",
     "add_collectible_button": "添加",
@@ -1391,5 +1393,10 @@
   },
   "whats_new": {
     "title": "了解新功能"
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

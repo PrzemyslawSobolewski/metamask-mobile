@@ -2529,6 +2529,8 @@
     "sell_description": "仮想通貨を売って現金化します"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "送信",
     "buy_button": "購入",
     "token_marketplace": "トークンマーケットプレイス",
@@ -5841,5 +5843,10 @@
       "swap": "トークンをスワップ",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

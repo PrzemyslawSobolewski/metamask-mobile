@@ -2529,6 +2529,8 @@
     "sell_description": "Bán tiền mã hóa lấy tiền mặt"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Gửi",
     "buy_button": "Mua",
     "token_marketplace": "Thị trường token",
@@ -5841,5 +5843,10 @@
       "swap": "Hoán đổi token",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

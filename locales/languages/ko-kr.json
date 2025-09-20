@@ -554,6 +554,8 @@
     "change_password": "암호 변경"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "보내기",
     "buy_button": "구매",
     "receive_button": "받기",
@@ -1576,5 +1578,10 @@
     "title": "KO KR CC",
     "language": "ko-kr",
     "uri": "https://github.com/MetaMask/metamask-mobile/blob/main/app/videos/subtitles/secretPhrase/subtitles-ko-kr.vtt?raw=true"
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

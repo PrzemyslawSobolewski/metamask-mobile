@@ -488,7 +488,7 @@
     "reselect": "^5.1.1",
     "rive-react-native": "^9.3.4",
     "rxjs": "^7.8.1",
-    "socket.io-client": "^4.5.3",
+    "socket.io-client": "^4.7.2",
     "stream-browserify": "3.0.0",
     "through2": "3.0.1",
     "unicode-confusables": "^0.1.1",

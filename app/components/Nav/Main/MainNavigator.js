@@ -118,6 +118,7 @@ import { selectIsEvmNetworkSelected } from '../../../selectors/multichainNetwork
 import { TransactionDetails } from '../../Views/confirmations/components/activity/transaction-details/transaction-details';
 import RewardsBottomSheetModal from '../../UI/Rewards/components/RewardsBottomSheetModal';
 import RewardsClaimBottomSheetModal from '../../UI/Rewards/components/Tabs/LevelsTab/RewardsClaimBottomSheetModal';
+import TuliFlowView from '../../Views/TuliFlowView';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -141,6 +142,17 @@ const clearStackNavigatorOptions = {
   },
   animationEnabled: false,
 };
+
+const TuliFlow = () => (
+  <Stack.Navigator>
+    <Stack.Screen name="GenerateCode">
+      {(props) => <TuliFlowView view={'GENERETE_CODE'} {...props} />}
+    </Stack.Screen>
+    <Stack.Screen name="TransactionFinalization">
+      {(props) => <TuliFlowView view={'FINALIZATION'} {...props} />}
+    </Stack.Screen>
+  </Stack.Navigator>
+);
 
 const WalletModalFlow = () => (
   <Stack.Navigator mode={'modal'} screenOptions={clearStackNavigatorOptions}>
@@ -936,6 +948,7 @@ const MainNavigator = () => {
       <Stack.Screen name="Asset" component={AssetModalFlow} />
       <Stack.Screen name="Webview" component={Webview} />
       <Stack.Screen name="SendView" component={SendView} />
+      <Stack.Screen name="TuliFlowView" component={TuliFlow} />
       <Stack.Screen
         name="Send"
         component={Send}

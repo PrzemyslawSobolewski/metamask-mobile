@@ -2529,6 +2529,8 @@
     "sell_description": "Vender cripto por efectivo"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "Enviar",
     "buy_button": "Comprar",
     "token_marketplace": "Mercado de tókenes",
@@ -5841,5 +5843,10 @@
       "swap": "Canjear tokens",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

@@ -2529,6 +2529,8 @@
     "sell_description": "암호화폐를 현금으로 매도"
   },
   "asset_overview": {
+    "tuli_button": "Tuli",
+    "tuli_description": "Tuli test description",
     "send_button": "보내기",
     "buy_button": "구매",
     "token_marketplace": "토큰 마켓플레이스",
@@ -5841,5 +5843,10 @@
       "swap": "토큰 스왑",
       "swap_approval": "Approve tokens"
     }
+  },
+  "tuli": {
+    "generate_code": "TULI Transaction",
+    "code_expire_time": "TULI code valid for:",
+    "confirm_transaction": "TULI Transaction"
   }
 }

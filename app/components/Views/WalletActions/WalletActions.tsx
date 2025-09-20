@@ -64,6 +64,7 @@ const WalletActions = () => {
     location: SwapBridgeNavigationLocation.TabBar,
     sourcePage: 'MainView',
   });
+  
 
   const closeBottomSheetAndNavigate = useCallback(
     (navigateFunc: () => void) => {
@@ -71,6 +72,21 @@ const WalletActions = () => {
     },
     [],
   );
+
+  const onTuliClick = () => {
+    closeBottomSheetAndNavigate(() => {
+      navigate('TuliFlowView', {
+        screen: 'GenerateCode',
+      });
+
+      /*Analytics.trackEventWithParameters(MetaMetricsEvents.BUY_BUTTON_CLICKED, {
+        text: 'Buy',
+        tokenSymbol: '',
+        location: 'TabBar',
+        chain_id: chainId,
+      });*/
+    });
+  };
 
   const onEarn = useCallback(async () => {
     closeBottomSheetAndNavigate(() => {
@@ -158,6 +174,14 @@ const WalletActions = () => {
   return (
     <BottomSheet ref={sheetRef}>
       <View style={styles.actionsContainer}>
+         <ActionListItem
+          label={strings('asset_overview.tuli_button')}
+          description={strings('asset_overview.tuli_description')}
+          iconName={IconName.Tuli}
+          onPress={onTuliClick}
+          // eslint-disable-next-line react-native/no-inline-styles
+          testID={WalletActionsBottomSheetSelectorsIDs.WALLET_TULI}
+        />
         {AppConstants.SWAPS.ACTIVE && isSwapsAllowed(chainId) && (
           <ActionListItem
             label={strings('asset_overview.swap')}
