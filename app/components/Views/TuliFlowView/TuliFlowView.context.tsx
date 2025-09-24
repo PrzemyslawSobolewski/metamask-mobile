@@ -26,6 +26,7 @@ import { estimateGas } from '../../../util/transaction-controller';
 import { getGlobalNetworkClientId } from '../../../util/networks/global-network';
 import { toHex } from '@metamask/controller-utils';
 import { TransactionParams } from '@metamask/transaction-controller';
+import { handleNetworkSwitch } from '../../../util/networks/handleNetworkSwitch';
 
 interface ITuliFlowContext {
   socket: Socket | null;
@@ -63,6 +64,7 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
   const [isPaymentReady, setIsPaymentReady] = useState(false);
   const [transaction, setTransaction] = useState<TransactionParams | undefined>();
   const [paymentId, setPaymentId] = useState('');
+  const [isConnected, setIsConnected] = useState(false);
 
   const providerConfig: ProviderConfig = useSelector(selectProviderConfig);
   const selectedAddress = useSelector(selectSelectedInternalAccountFormattedAddress);
@@ -73,20 +75,9 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
     Math.floor(Math.random() * (12000000 - 8000000 + 1)) + 8000000;
 
   const changeNetwork = (targetChainId: number) => {
-    const { NetworkController, CurrencyRateController } = Engine.context;
-
-    const entry = Object.entries(networkConfigurations).find(
-      ([, { chainId }]) => +chainId === targetChainId,
-    );
-
-    if (entry) {
-      const [networkConfigurationId, networkConfiguration] = entry;
-      const { nativeCurrency } = networkConfiguration;
-
-      CurrencyRateController.setCurrentCurrency(nativeCurrency);
-
-      NetworkController.setActiveNetwork(networkConfigurationId);
-    }
+    handleNetworkSwitch(toHex(targetChainId));
+    
+    
   };
 
   /*const estimateGas = async () => {
@@ -103,7 +94,6 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
   };*/
 
   const createTransaction = async () => {
-    console.log('createTransaction', paymentData);
     if (paymentData?.executionInfo) {
       const estimation = await estimateGas({
       value: paymentData?.executionInfo.payloads[0].value,
@@ -112,6 +102,7 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
       to: paymentData?.executionInfo.payloads[0].to,
       chainId: toHex(paymentData.executionInfo.chainId),
     }, selectedNetworkClientId);
+    
       // TODO: estimate gas
       const transactionObject: TransactionParams = {
         data: paymentData?.executionInfo.payloads[0].data,
@@ -119,9 +110,9 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
         value: paymentData?.executionInfo.payloads[0].value,
         from: selectedAddress as string,
         to: paymentData?.executionInfo.payloads[0].to,
-        gas: estimation.gas || `0x${generateGas().toString(16)}`,
+        gas: `0x${generateGas().toString(16)}`,
         //gasPrice: estimation.gasPrice,
-        estimateGasError: estimation.simulationFails?.errorKey || undefined,
+        estimateGasError: estimation.simulationFails?.reason || undefined,
       };
       setTransaction(transactionObject);
     }
@@ -133,6 +124,10 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
       transports: ['websocket'],
     });
 
+    wsSocket.on('connect', () => {
+      setIsConnected(true);
+    });
+
     setSocket(wsSocket);
 
     return () => {
@@ -141,9 +136,8 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
   }, []);
 
   useEffect(() => {
-    console.log('paymentData, isPaymentReady, providerConfig.chainId', paymentData, isPaymentReady, providerConfig.chainId);
     if (paymentData && isPaymentReady && paymentData.executionInfo) {
-      if (+providerConfig.chainId !== paymentData.executionInfo.chainId) {
+      if (providerConfig.chainId !== toHex(paymentData.executionInfo.chainId)) {
         changeNetwork(paymentData.executionInfo.chainId);
         return;
       }
@@ -152,32 +146,31 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
   }, [paymentData, isPaymentReady, providerConfig.chainId]);
 
   useEffect(() => {
-    const paymentStatusReceiveCallback = (payload: PaymentStatusResponse) => {
-      console.log('status', payload);
-
+    console.log("INFURE API", "4d74e772b1ad4abc935b28127dfa746f")
+     const paymentStatusReceiveCallback = (payload: PaymentStatusResponse) => {
       setIsListeningOnPaymentStatus(false);
     };
 
-    if (socket?.connected) {
+    if (isConnected && socket) {
       if (isListeningOnPaymentStatus) {
-        socket.off(WS_EVENTS.PAYMENT_STATUS, ({ payload }) =>
+        socket.off(WS_EVENTS.EXECUTION_EVENT_STATUS, ({ payload }) =>
           paymentStatusReceiveCallback(payload),
         );
       } else {
         setIsListeningOnPaymentStatus(true);
       }
-      socket.on(WS_EVENTS.PAYMENT_STATUS, ({ payload }) =>
+      socket.on(WS_EVENTS.EXECUTION_EVENT_STATUS, ({ payload }) =>
         paymentStatusReceiveCallback(payload),
       );
     }
 
     return () => {
-      socket?.off(WS_EVENTS.PAYMENT_STATUS, ({ payload }) =>
+      socket?.off(WS_EVENTS.EXECUTION_EVENT_STATUS, ({ payload }) =>
         paymentStatusReceiveCallback(payload),
       );
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [socket]);
+  }, [isConnected, socket]);
 
   useEffect(() => {
     const paymentExecuteCallback = (payload: ExecutePaymentResponse) => {
@@ -186,29 +179,29 @@ export const TuliFlowContextProvider = ({ children }: TuliFlowContextProps) => {
       setIsPaymentReady(true);
     };
 
-    console.log('useEffect paymentExecuteCallback', paymentId, isListeningOnPaymentExecute);
-    if (socket && paymentId) {
+   
+    if (isConnected && paymentId && socket) {
+       console.log('listen for WS_EVENTS.EXECUTE_EVENT', paymentId, socket?.connected);
       if (isListeningOnPaymentExecute) {
-        socket.off(WS_EVENTS.EXECUTE_PAYMENT, ({ payload }) =>
+        socket.off(WS_EVENTS.EXECUTE_EVENT, ({ payload }) =>
           paymentExecuteCallback(payload),
         );
       } else {
         setIsListeningOnPaymentExecute(true);
       }
 
-      socket.on(WS_EVENTS.EXECUTE_PAYMENT, ({ payload }) => {
-        console.log('WS_EVENTS.EXECUTE_PAYMENT', payload);
+      socket.on(WS_EVENTS.EXECUTE_EVENT, ({ payload }) => {
         paymentExecuteCallback(payload);
       });
     }
 
     return () => {
-      socket?.off(WS_EVENTS.EXECUTE_PAYMENT, ({ payload }) =>
+      socket?.off(WS_EVENTS.EXECUTE_EVENT, ({ payload }) =>
         paymentExecuteCallback(payload),
       );
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [socket, paymentId]);
+  }, [isConnected, paymentId]);
 
   return (
     <TuliFlowContext.Provider

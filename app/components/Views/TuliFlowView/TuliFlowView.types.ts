@@ -27,6 +27,7 @@ export interface OnChainPayload {
   data: string;
   value?: string;
   to: string;
+  type?: string;
 }
 export interface ExecutePaymentResponse {
   paymentId: string;
@@ -37,8 +38,8 @@ export interface ExecutePaymentResponse {
 }
 
 export enum WS_EVENTS {
-  EXECUTE_PAYMENT = 'ExecutePayment',
-  PAYMENT_STATUS = 'PaymentStatus',
+  EXECUTE_EVENT = 'ExecuteEvent',
+  EXECUTION_EVENT_STATUS = 'ExecutionEventStatus',
 }
 
 export interface IJoinRoom {

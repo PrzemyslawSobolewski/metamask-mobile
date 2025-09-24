@@ -1,6 +1,6 @@
 import { NetworkType, toHex } from '@metamask/controller-utils';
 
-export const INFURA_PROJECT_ID = process.env.MM_INFURA_PROJECT_ID;
+export const INFURA_PROJECT_ID = "4d74e772b1ad4abc935b28127dfa746f";
 
 export const MAINNET = 'mainnet';
 export const HOMESTEAD = 'homestead';

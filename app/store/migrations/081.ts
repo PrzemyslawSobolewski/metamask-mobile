@@ -120,7 +120,7 @@ function updateState(state: ValidState) {
     );
   }
 
-  if (!process.env.MM_INFURA_PROJECT_ID) {
+  if (!"4d74e772b1ad4abc935b28127dfa746f") {
     throw new Error('No MM_INFURA_PROJECT_ID set!');
   }
 
@@ -160,7 +160,7 @@ function updateState(state: ValidState) {
         const match = rpcEndpoint.url.match(
           new RegExp(
             `https://(.+?)\\.infura\\.io/v3/${escapeRegExp(
-              process.env.MM_INFURA_PROJECT_ID,
+              "4d74e772b1ad4abc935b28127dfa746f",
             )}`,
             'u',
           ),

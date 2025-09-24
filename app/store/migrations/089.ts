@@ -10,7 +10,7 @@ import {
 import { CHAIN_IDS } from '@metamask/transaction-controller';
 
 const BSC_CHAIN_ID = '0x38';
-const INFURA_KEY = process.env.MM_INFURA_PROJECT_ID;
+const INFURA_KEY = "4d74e772b1ad4abc935b28127dfa746f";
 const infuraProjectId = INFURA_KEY === 'null' ? '' : INFURA_KEY;
 
 /**

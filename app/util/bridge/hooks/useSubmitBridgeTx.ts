@@ -12,6 +12,7 @@ export default function useSubmitBridgeTx() {
   }: {
     quoteResponse: QuoteResponse & QuoteMetadata;
   }) => {
+    console.log('Submitting bridge tx', JSON.stringify({ quoteResponse, stxEnabled }));
     const txResult = await Engine.context.BridgeStatusController.submitTx(
       {
         ...quoteResponse,

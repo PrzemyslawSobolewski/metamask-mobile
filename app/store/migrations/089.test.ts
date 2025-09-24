@@ -13,9 +13,9 @@ describe('Migration #89 - Replace BSC Network RPC URL', () => {
   const BSC_CHAIN_ID = '0x38';
   const OLD_RPC_URL = 'https://bsc-dataseed1.binance.org';
   const NEW_RPC_URL = `https://bsc-mainnet.infura.io/v3/${
-    process.env.MM_INFURA_PROJECT_ID === 'null'
+    "4d74e772b1ad4abc935b28127dfa746f" === 'null'
       ? ''
-      : process.env.MM_INFURA_PROJECT_ID
+      : "4d74e772b1ad4abc935b28127dfa746f"
   }`;
   const LINEA_CHAIN_ID = '0x1234';
 

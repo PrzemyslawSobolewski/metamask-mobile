@@ -43,7 +43,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if the state is not an object', () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = 'not-an-object';
     const expectedState = state;
 
@@ -58,7 +58,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine is missing', () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {};
     const expectedState = state;
 
@@ -73,7 +73,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine is not object', () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = { engine: 'not-an-object' };
     const expectedState = state;
 
@@ -88,7 +88,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine.backgroundState is missing', () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {},
     };
@@ -105,7 +105,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine.backgroundState is not an object', () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: 'not-an-object',
@@ -124,7 +124,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine.backgroundState.NetworkController is missing', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {},
@@ -143,7 +143,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine.backgroundState.NetworkController is not an object', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -164,7 +164,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if state.engine.backgroundState.NetworkController.networkConfigurationsByChainId is missing', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -185,7 +185,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('logs an error and returns the state unchanged if NetworkController.networkConfigurationsByChainId is not an object', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -230,7 +230,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('returns the state unchanged if state.engine.backgroundState.NetworkController.networkConfigurationsByChainId is empty', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -248,7 +248,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not update any network configurations that are not objects', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {
@@ -296,7 +296,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not update any network configurations that do not have rpcEndpoints', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {
@@ -344,7 +344,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not assign failover URLs to custom RPC endpoints that use non-Infura URLs', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {
@@ -406,7 +406,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not assign failover URLs to custom RPC endpoints that contain an Infura URL but do not use our API key', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {
@@ -468,7 +468,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('assigns failover URLs to known Infura RPC endpoints', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_MAINNET_URL = QUICKNODE_MAINNET_URL;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     process.env.QUICKNODE_ARBITRUM_URL = QUICKNODE_ARBITRUM_URL;
@@ -622,7 +622,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('assigns failover URLs to known Infura RPC endpoints, even if they have an empty set of failover URLs', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_MAINNET_URL = QUICKNODE_MAINNET_URL;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     process.env.QUICKNODE_ARBITRUM_URL = QUICKNODE_ARBITRUM_URL;
@@ -783,7 +783,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not assign failover URLs to any Infura endpoints for which the appropriate environment variable is not set', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -923,7 +923,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not update any Infura RPC endpoints that already have failover URLs defined', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {
@@ -987,7 +987,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('assigns failover URLs to custom RPC endpoints that are actually Infura RPC endpoints in disguise', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_MAINNET_URL = QUICKNODE_MAINNET_URL;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     process.env.QUICKNODE_ARBITRUM_URL = QUICKNODE_ARBITRUM_URL;
@@ -1141,7 +1141,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('assigns failover URLs to custom RPC endpoints that are actually Infura RPC endpoints in disguise, even if they have an empty set of failover URLs', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_MAINNET_URL = QUICKNODE_MAINNET_URL;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     process.env.QUICKNODE_ARBITRUM_URL = QUICKNODE_ARBITRUM_URL;
@@ -1302,7 +1302,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not assign failover URLs to custom RPC endpoints that are actually Infura RPC endpoints in disguise but for which the appropriate environment variables are not set', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     const state = {
       engine: {
         backgroundState: {
@@ -1442,7 +1442,7 @@ describe(`Migration #${VERSION}`, () => {
   });
 
   it('does not update any in-disguise Infura RPC endpoints that already have failover URLs defined', async () => {
-    process.env.MM_INFURA_PROJECT_ID = MM_INFURA_PROJECT_ID;
+    "4d74e772b1ad4abc935b28127dfa746f" = MM_INFURA_PROJECT_ID;
     process.env.QUICKNODE_LINEA_MAINNET_URL = QUICKNODE_LINEA_MAINNET_URL;
     const state = {
       engine: {

@@ -288,9 +288,9 @@ prebuild_ios(){
     echo "GoogleService-Info.plist has been created successfully."
     # Ensure the file has read and write permissions
     chmod 664 ./ios/GoogleServices/GoogleService-Info.plist
-  else
-    echo "GOOGLE_SERVICES_B64_IOS is not set in the .env file."
-    exit 1
+  #else
+    #echo "GOOGLE_SERVICES_B64_IOS is not set in the .env file."
+    #exit 1
   fi
 }
 

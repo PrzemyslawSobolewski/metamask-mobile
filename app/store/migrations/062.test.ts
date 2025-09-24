@@ -13,9 +13,9 @@ describe('Migration #62 - Replace Base Network RPC URL', () => {
   const BASE_CHAIN_ID = '0x2105';
   const OLD_RPC_URL = 'https://mainnet.base.org';
   const NEW_RPC_URL = `https://base-mainnet.infura.io/v3/${
-    process.env.MM_INFURA_PROJECT_ID === 'null'
+    "4d74e772b1ad4abc935b28127dfa746f" === 'null'
       ? ''
-      : process.env.MM_INFURA_PROJECT_ID
+      : "4d74e772b1ad4abc935b28127dfa746f"
   }`;
   const LINEA_CHAIN_ID = '0x1234';
 

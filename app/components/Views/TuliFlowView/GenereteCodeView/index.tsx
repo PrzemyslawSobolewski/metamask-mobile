@@ -184,16 +184,20 @@ const GenerateCodeView = () => {
       if (socket) {
         const roomData = {
           paymentId: res.paymentId,
-          getLast: true,
+          getLast: false,
         };
+        
         socket.emit('join', {
           ...roomData,
-          eventType: WS_EVENTS.EXECUTE_PAYMENT,
+          eventType: WS_EVENTS.EXECUTE_EVENT,
         } as IJoinRoom);
+
+        console.log('join room for execute payment', {...roomData, eventType: WS_EVENTS.EXECUTE_EVENT});
         socket.emit('join', {
           ...roomData,
-          eventType: WS_EVENTS.PAYMENT_STATUS,
+          eventType: WS_EVENTS.EXECUTION_EVENT_STATUS,
         } as IJoinRoom);
+        console.log('joined room for payment status', {...roomData, eventType: WS_EVENTS.EXECUTION_EVENT_STATUS});
         setPaymentId(res.paymentId);
       }
       setInitialMinutes(Math.floor(millis / 60000));

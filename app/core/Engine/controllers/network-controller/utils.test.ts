@@ -24,11 +24,11 @@ jest.mock('../../../../util/networks/customNetworks', () => {
   // The network constants file relies on INFURA_PROJECT_ID already being set.
   // If we set it in a test, then it's already too late.
   // Therefore, we have to set it to a known value before loading the file.
-  const previousInfuraProjectId = process.env.MM_INFURA_PROJECT_ID;
+  const previousInfuraProjectId = "4d74e772b1ad4abc935b28127dfa746f";
   // NOTE: This must match MOCK_METAMASK_INFURA_PROJECT_ID below.
-  process.env.MM_INFURA_PROJECT_ID = 'metamask-infura-project-id';
+  "4d74e772b1ad4abc935b28127dfa746f" = 'metamask-infura-project-id';
   const mod = jest.requireActual('../../../../util/networks/customNetworks');
-  process.env.MM_INFURA_PROJECT_ID = previousInfuraProjectId;
+  "4d74e772b1ad4abc935b28127dfa746f" = previousInfuraProjectId;
   return mod;
 });
 

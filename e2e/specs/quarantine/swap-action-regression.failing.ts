@@ -29,7 +29,7 @@ describe(RegressionTrade('Multiple Swaps from Actions'), (): void => {
             type: LocalNodeType.anvil,
             options: {
               chainId: 1,
-              forkUrl: `https://mainnet.infura.io/v3/${process.env.MM_INFURA_PROJECT_ID}`,
+              forkUrl: `https://mainnet.infura.io/v3/${"4d74e772b1ad4abc935b28127dfa746f"}`,
             },
           },
         ],

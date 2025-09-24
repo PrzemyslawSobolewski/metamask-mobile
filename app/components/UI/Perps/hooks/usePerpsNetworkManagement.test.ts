@@ -257,7 +257,7 @@ describe('usePerpsNetworkManagement', () => {
       });
 
       it('should handle missing Infura key', async () => {
-        process.env.MM_INFURA_PROJECT_ID = 'null';
+        "4d74e772b1ad4abc935b28127dfa746f" = 'null';
         mockUsePerpsNetwork.mockReturnValue('mainnet');
         mockUseSelector.mockReturnValue({});
 

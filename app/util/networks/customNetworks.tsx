@@ -6,7 +6,7 @@ import { BtcScope, SolScope } from '@metamask/keyring-api';
 ///: END:ONLY_INCLUDE_IF
 
 /* eslint-disable @typescript-eslint/no-require-imports, import/no-commonjs */
-const InfuraKey = process.env.MM_INFURA_PROJECT_ID;
+const InfuraKey = "4d74e772b1ad4abc935b28127dfa746f";
 const infuraProjectId = InfuraKey === 'null' ? '' : InfuraKey;
 
 export const QUICKNODE_ENDPOINT_URLS_BY_INFURA_NETWORK_NAME = {

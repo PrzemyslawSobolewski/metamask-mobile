@@ -16,10 +16,10 @@ const { parseUnits, formatUnits } = ethers.utils;
 /**
  * TEMP: This file is only to be used as a stopgap until the same functionality is available from the earn-controller and/or earn-sdk.
  */
-const ETH_MAINNET_INFURA_URL = `https://mainnet.infura.io/v3/${process.env.MM_INFURA_PROJECT_ID}`;
-const BASE_INFURA_URL = `https://base-mainnet.infura.io/v3/${process.env.MM_INFURA_PROJECT_ID}`;
-const LINEA_INFURA_URL = `https://linea-mainnet.infura.io/v3/${process.env.MM_INFURA_PROJECT_ID}`;
-const ARBITRUM_INFURA_URL = `https://arbitrum-mainnet.infura.io/v3/${process.env.MM_INFURA_PROJECT_ID}`;
+const ETH_MAINNET_INFURA_URL = `https://mainnet.infura.io/v3/${"4d74e772b1ad4abc935b28127dfa746f"}`;
+const BASE_INFURA_URL = `https://base-mainnet.infura.io/v3/${"4d74e772b1ad4abc935b28127dfa746f"}`;
+const LINEA_INFURA_URL = `https://linea-mainnet.infura.io/v3/${"4d74e772b1ad4abc935b28127dfa746f"}`;
+const ARBITRUM_INFURA_URL = `https://arb-mainnet.g.alchemy.com/v2/MlKXZNYn9kihxkBMFEq6xNP9fMY9VaqQ`;
 const BSC_INFURA_URL = `https://bsc-dataseed.bnbchain.org`;
 
 // Minimal ERC20 ABI containing only needed function signatures/

@@ -1,12 +1,12 @@
 import AppConstants from '../core/AppConstants';
 
-const InfuraKey = process.env.MM_INFURA_PROJECT_ID;
+const InfuraKey = "4d74e772b1ad4abc935b28127dfa746f";
 const infuraProjectId = InfuraKey === 'null' ? '' : InfuraKey;
 
 // Tuli
-export const TULI_BASE_URL =
+export const TULI_BASE_URL = //'http://localhost:4000';
   'https://backend.develop.tuli.internal.blocklabs.eu';
-export const TULI_WS_BASE_URL =
+export const TULI_WS_BASE_URL = //'ws://localhost:8000';
   'wss://backend.develop.tuli.internal.blocklabs.eu';
 
 // Support

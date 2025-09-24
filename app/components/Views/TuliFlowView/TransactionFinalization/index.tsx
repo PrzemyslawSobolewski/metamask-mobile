@@ -19,7 +19,7 @@ import Button, {
 } from '../../../../component-library/components/Buttons/Button';
 import Engine from '../../../../core/Engine';
 import TransactionTypes from '../../../../core/TransactionTypes';
-import { WalletDevice } from '@metamask/transaction-controller';
+import { TransactionType, WalletDevice } from '@metamask/transaction-controller';
 import NotificationManager from '../../../../core/NotificationManager';
 import { stopGasPolling } from '../../../../core/GasPolling/GasPolling';
 import { resetTransaction } from '../../../../actions/transaction';
@@ -32,6 +32,7 @@ import TuliLogo from '../assets/tuli_logo.svg';
 import TuliLogoRadial from '../assets/tuli_logo_radial.svg';
 import LinearGradient from 'react-native-linear-gradient';
 import { getGlobalNetworkClientId } from '../../../../util/networks/global-network';
+import { ORIGIN_METAMASK } from '@metamask/controller-utils';
 
 const createStyles = (colors: any) =>
   StyleSheet.create({
@@ -174,6 +175,7 @@ const TransactionFinalization = () => {
     setPaymentData,
     paymentId,
   } = useTuliFLowContext();
+  
   const { colors } = useTheme();
   const styles = createStyles(colors);
   const selectedNetworkClientId = getGlobalNetworkClientId();
@@ -190,14 +192,19 @@ const TransactionFinalization = () => {
               ...transaction,
             },
             {
-              networkClientId: selectedNetworkClientId,
-              origin: 'metamask',
+                deviceConfirmedOn: WalletDevice.MM_MOBILE,
+                networkClientId: selectedNetworkClientId,
+                origin: ORIGIN_METAMASK,
+                type: TransactionType.swap,
             },
           );
+
+          console.log("TX META", transactionMeta);
         await KeyringController.resetQRKeyringState();
         await ApprovalController.accept(transactionMeta.id, undefined, {
           waitForResult: true,
         });
+
         await new Promise((resolve) => resolve(result));
 
         if (transactionMeta.error) {
@@ -217,6 +224,7 @@ const TransactionFinalization = () => {
           navigation && navigation.dangerouslyGetParent()?.pop?.();
         });
       } catch (error: any) {
+        console.log('Error while submitting transaction', error);
         if (!error?.message.startsWith(KEYSTONE_TX_CANCELED)) {
           Alert.alert(
             strings('transactions.transaction_error'),
